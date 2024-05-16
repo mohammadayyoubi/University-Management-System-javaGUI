@@ -30,4 +30,6 @@ security:
 - change password 
 - change username
 
+Note:
 The folder above (ums/University Management System) contain all the files - classes - packages of the project
+in order to run the project you need java compiler - prefferd netbeans
