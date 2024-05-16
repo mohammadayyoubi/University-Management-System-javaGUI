@@ -30,4 +30,4 @@ security:
 - change password 
 - change username
 
-The folder above (University management system) contain all the files - classes - packages of the project
+The folder above (ums/University Management System) contain all the files - classes - packages of the project
