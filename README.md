@@ -7,11 +7,12 @@ The data of the system is load up from files (courses, student, user...) in whic
 same on close, all the data of the system and action you have done on the system will be also save on that file. (stream)
 
 To open and Try:
-1. Download the project, and run it (prefferd netbeans)
-2. You will see the login page, enter the username and password (username: admin | password: Admin@123)
-3. You will see the main page, and you can do all the action you want.
-4. To close the system, click on the close button on the top right corner.
-5. If you forgot the username and pass you can find them on txt file
+1. Download the project, and open it (prefferd to open on netbeans)
+2. open src folder run system from class "runUMS.java"
+3. You will see the login page, enter the username and password (username: admin | password: Admin@123)
+4. You will see the main page, and you can do all the action you want.
+5. To close the system, click on the close button on the top right corner.
+6. If you forgot the username and pass you can find them on txt file
 
 
 
