@@ -6,7 +6,16 @@ The GUI is very clear and freindly using, and it is built up by java also.
 The data of the system is load up from files (courses, student, user...) in which there are .dat file.
 same on close, all the data of the system and action you have done on the system will be also save on that file. (stream)
 
-Function you can do (Description): 
+To open and Try:
+1. Download the project, and run it (prefferd netbeans)
+2. You will see the login page, enter the username and password (username: admin | password: Admin@123)
+3. You will see the main page, and you can do all the action you want.
+4. To close the system, click on the close button on the top right corner.
+5. If you forgot the username and pass you can find them on txt file
+
+
+
+Functions you can do (Description): 
 
 Student management:
 - add student to system (of course it will check first if the student already exist depanding on SSN number)
@@ -23,7 +32,7 @@ Course-Student action:
 - move student from course section to another
 
 Grades:
-- fill grade of the student in a course section, by pop-up loop each contain the name of the student and a text input to enter the grade)
+- fill grade of the student in a course section, by pop-up loop each contain the name of the student and a text input to enter the grade
 - view the grades of the students in a course section (by for loop pop-up each contain the name of the student and it's grade)
 
 security:
