@@ -16,7 +16,6 @@ public class SystemClass extends JFrame {
     static ArrayList<Course> Allcourses = new ArrayList<Course>();
     static String pass;
     static String username;
-    /*ArrayList<Professor> Allprof = new ArrayList<Professor>();*/
     JLabel sysLabel = new JLabel("Welcome to our University Management System");
     JLabel studLabel = new JLabel("Students ");
     JLabel courseLabel = new JLabel("Courses");
@@ -149,6 +148,7 @@ public class SystemClass extends JFrame {
         loadCourseFromFile();
         loadPassFromFile();
         loadUserFromFile();
+        
         Student.ID = (Allstudents.size());//3melna assign 3ala ID taba3 class student yale huwe static la ysir metel size arraylist te3 students
 
         /*3malna login hun*/
@@ -1191,27 +1191,31 @@ public class SystemClass extends JFrame {
                 if (ESID.getText().equals("")) {
                     JOptionPane.showMessageDialog(null, "Enter Student ID", "Missing entering ID", JOptionPane.WARNING_MESSAGE);
                 } else {
-                    for (int i = 0; i < Allstudents.size(); i++) {
-                        if (Integer.parseInt(ESID.getText()) == Allstudents.get(i).SID) {
-                            if (ESAddress.getText().equals("") || ESPhone.getText().equals("")) {
-                                JOptionPane.showMessageDialog(null, "Enter Student Information", "Missing entering All information", JOptionPane.WARNING_MESSAGE);
-                                break;
-                            } else {
-                                Allstudents.get(i).Saddress = ESAddress.getText();
-                                Allstudents.get(i).SphoneNb = ESPhone.getText();
+                    int sIndex = -1;
+                    for (Student s : Allstudents) {
+                        if(s.SID == Integer.parseInt(ESID.getText())){
+                            sIndex = Allstudents.indexOf(s);
+                        }
+                    }
+                    
+                    if(sIndex != -1){
+                        if(ESAddress.getText().equals("")  ||  ESPhone.getText().equals("")){
+                            JOptionPane.showMessageDialog(null, "Enter Student Information", "Missing entering All information", JOptionPane.WARNING_MESSAGE);
+                        }else{
+                            Allstudents.get(sIndex).Saddress = ESAddress.getText();
+                            Allstudents.get(sIndex).SphoneNb = ESPhone.getText();
                                 ESNote.setText("Succefully changed");
                                 ESNote.setForeground(new Color(1, 100, 30));
                                 ESNote.setFont(new Font("Arial", Font.BOLD, 14));
-                                break;
-                            }
-                        } else {
-                            ESNote.setText("Wrong ID / not found");
-                            ESNote.setForeground(new Color(200, 1, 1));
-                            ESNote.setFont(new Font("Arial", Font.BOLD, 14));
-                            ESAddress.setText("");
-                            ESPhone.setText("");
                         }
+                    }else{
+                        ESNote.setText("Wrong ID / not found");
+                        ESNote.setForeground(new Color(200, 1, 1));
+                        ESNote.setFont(new Font("Arial", Font.BOLD, 14));
+                        ESAddress.setText("");
+                        ESPhone.setText("");
                     }
+
                 }
             }
         });
@@ -1237,7 +1241,7 @@ public class SystemClass extends JFrame {
         addB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int cIndex = 0, sIndex = -1;
+                int cIndex = -1, sIndex = -1;
                 for (int i = 0; i < Allcourses.size(); i++) {
                     if (Allcourses.get(i).Course_code.equalsIgnoreCase(ARcourseCodeT.getText())) {
                         cIndex = i;
@@ -1250,7 +1254,7 @@ public class SystemClass extends JFrame {
                         break;
                     }
                 }
-                if (cIndex != 0 && sIndex != -1) {
+                if (cIndex != -1 && sIndex != -1) {
                     if (((CourseSection) Allcourses.get(cIndex)).checkStudent(Allstudents.get(sIndex))) {
                         ARnote.setText(Allstudents.get(sIndex).Sname + " Already in " + Allcourses.get(cIndex).Course_name);
                         ARnote.setForeground(new Color(200, 1, 1));
@@ -1271,7 +1275,7 @@ public class SystemClass extends JFrame {
                         }
 
                     }
-                } else if (cIndex == 0) {
+                } else if (cIndex == -1) {
                     ARnote.setText(ARcourseCodeT.getText() + " Not Found");
                     ARnote.setForeground(new Color(200, 1, 1));
                     ARnote.setFont(new Font("Arial", Font.BOLD, 14));
@@ -1290,7 +1294,7 @@ public class SystemClass extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                int cIndex = 0, sIndex = -1;
+                int cIndex = -1, sIndex = -1;
 
                 for (int i = 0; i < Allcourses.size(); i++) {
                     if (Allcourses.get(i).Course_code.equalsIgnoreCase(ARcourseCodeT.getText())) {
@@ -1304,7 +1308,7 @@ public class SystemClass extends JFrame {
                         break;
                     }
                 }
-                if (cIndex != 0 && sIndex != -1) {
+                if (cIndex != -1 && sIndex != -1) {
                     if (((CourseSection) Allcourses.get(cIndex)).checkStudent(Allstudents.get(sIndex))) {
                         ((CourseSection) Allcourses.get(cIndex)).remove_student(Allstudents.get(sIndex));
 //                        Allstudents.get(sIndex).courses.remove((CourseSection) Allcourses.get(cIndex));
@@ -1316,7 +1320,7 @@ public class SystemClass extends JFrame {
                         ARnote.setForeground(new Color(200, 1, 1));
                         ARnote.setFont(new Font("Arial", Font.BOLD, 14));
                     }
-                } else if (cIndex == 0) {
+                } else if (cIndex == -1) {
                     ARnote.setText(ARcourseCodeT.getText() + " Not Found");
                     ARnote.setForeground(new Color(200, 1, 1));
                     ARnote.setFont(new Font("Arial", Font.BOLD, 14));
@@ -1340,7 +1344,7 @@ public class SystemClass extends JFrame {
                     Mnote.setForeground(new Color(200, 1, 1));
                     Mnote.setFont(new Font("Arial", Font.BOLD, 14));
                 }
-                int fromCourseIndex = 0, sIndex = -1, toCourseIndex = 0;
+                int fromCourseIndex = -1, sIndex = -1, toCourseIndex = -1;
                 for (int i = 0; i < Allcourses.size(); i++) {
                     if (fromCourseCodeT.getText().equalsIgnoreCase(Allcourses.get(i).Course_code)) {
                         fromCourseIndex = i;
@@ -1368,7 +1372,7 @@ public class SystemClass extends JFrame {
                     Mnote.setForeground(new Color(200, 1, 1));
                     Mnote.setFont(new Font("Arial", Font.BOLD, 14));
                 } else {
-                    if (sIndex != -1 && toCourseIndex != 0 && fromCourseIndex != 0) {
+                    if (sIndex != -1 && toCourseIndex != -1 && fromCourseIndex != -1) {
                         if (((CourseSection) Allcourses.get(fromCourseIndex)).regStud_course.contains(Allstudents.get(sIndex))) {
                             ((CourseSection) Allcourses.get(fromCourseIndex)).move_student(Allstudents.get(sIndex), (CourseSection) Allcourses.get(toCourseIndex));
                             //Allstudents.get(sIndex).changeCourse((CourseSection)Allcourses.get(fromCourseIndex),(CourseSection) Allcourses.get(toCourseIndex));
@@ -1384,11 +1388,11 @@ public class SystemClass extends JFrame {
                             Mnote.setForeground(new Color(200, 1, 1));
                             Mnote.setFont(new Font("Arial", Font.BOLD, 14));
                         }
-                    } else if (fromCourseIndex == 0) {
+                    } else if (fromCourseIndex == -1) {
                         Mnote.setText(fromCourseCodeT.getText() + " Not Found");
                         Mnote.setForeground(new Color(200, 1, 1));
                         Mnote.setFont(new Font("Arial", Font.BOLD, 14));
-                    } else if (toCourseIndex == 0) {
+                    } else if (toCourseIndex == -1) {
                         Mnote.setText(toCourseCodeT.getText() + " Not Found");
                         Mnote.setForeground(new Color(200, 1, 1));
                         Mnote.setFont(new Font("Arial", Font.BOLD, 14));
@@ -1409,32 +1413,30 @@ public class SystemClass extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String status = section.getText(), courseName = CNameT.getText(), courseCode = CCodeT.getText();
                 int weeks = Integer.parseInt(weeksNbT.getText()), Nbsec = Integer.parseInt(CSectionNbT.getText()), maxNbStud = Integer.parseInt(CMaxNbOfStudT.getText());
-                int cIndex = 0;
                 for (int i = 0; i < Allcourses.size(); i++) {
                     if (Allcourses.get(i).Course_code.equalsIgnoreCase(courseCode)) {
-                        cIndex = i;
-                        break;
+                         addCourseNote.setText("Already exists");
+                         addCourseNote.setForeground(new Color(200, 1, 1));
+                         addCourseNote.setFont(new Font("Arial", Font.BOLD, 14));
+                         System.out.println("course already exist");
+                        return;
                     }
                 }
-                if (Allcourses.get(cIndex).Course_code.equalsIgnoreCase(courseCode)) {
-                    addCourseNote.setText("Already exists");
-                    addCourseNote.setForeground(new Color(200, 1, 1));
-                    addCourseNote.setFont(new Font("Arial", Font.BOLD, 14));
-                    System.out.println("course already exist");
-                } else {
+               
                     if ((weeks < 5 || weeks > 12) && status.equalsIgnoreCase("online")) {
                         JOptionPane.showMessageDialog(null, "Weeks must be between 5&12", "Error Message", JOptionPane.ERROR_MESSAGE);
                     } else {
-
+                   
                         if (status.equalsIgnoreCase("normal")) {
-
+                            
                             Allcourses.add(new normalCourse(maxNbStud, Nbsec, courseName, courseCode, weeks, status));
                             addCourseNote.setText("Normal Course (" + courseCode + ") Added");
                             addCourseNote.setForeground(new Color(1, 100, 30));
                             addCourseNote.setFont(new Font("Arial", Font.BOLD, 14));
                             System.out.println("Normal Course (" + courseCode + ") Added");
+                            
                         } else {
-
+                            //online course add
                             Allcourses.add(new onlineCourse(maxNbStud, Nbsec, courseName, courseCode, weeks, status));
                             addCourseNote.setText("Online Course (" + courseCode + ") Added");
                             addCourseNote.setForeground(new Color(1, 100, 30));
@@ -1443,44 +1445,44 @@ public class SystemClass extends JFrame {
                         }
 
                     }
-                }
+ 
             }
         });
         /*remove course button*/
 
         //RC_Code
         RCButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int cIndex = 0;
-                for (int i = 0; i < Allcourses.size(); i++) {
-                    if (RC_Code.getText().equalsIgnoreCase(Allcourses.get(i).Course_code)) {
-                        cIndex = i;
-                        break;
-                    }
-                }
-                if (cIndex != 0) {
-                    removeCourseMethod(Allcourses.get(cIndex));
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (RC_Code.getText().equals("")) {
+            RCNote.setText("Enter Course Code");
+        } else {
+            for (int i = 0; i < Allcourses.size(); i++) { // Changed <= to <
+                if (RC_Code.getText().equalsIgnoreCase(Allcourses.get(i).Course_code)) {
+                    Allcourses.remove(Allcourses.get(i));                
                     RCNote.setText("Removed");
-                } else {
-                    RCNote.setText("Course not found!");
+                    return;
                 }
             }
-        });
+            RCNote.setText("Course not found!");
+        }
+    }
+});
+
 
         /*course info button actionlistener*/
         CourseInfoB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e
             ) {
-                int cIndex = 0;
+                int cIndex = -1;
                 for (int i = 0; i < Allcourses.size(); i++) {
                     if (CourseCodeT.getText().equalsIgnoreCase(Allcourses.get(i).Course_code)) {
                         cIndex = i;
                         break;
                     }
                 }
-                if (cIndex != 0) {
+                if (cIndex != -1) {
                     CourseNameT.setText(Allcourses.get(cIndex).Course_name);
                     MaxNbOfStudT.setText(String.valueOf(((CourseSection) Allcourses.get(cIndex)).Section_maxNbStud));
                     NbRegStud.setText(String.valueOf(((CourseSection) Allcourses.get(cIndex)).regStud_course.size()));
@@ -1521,14 +1523,14 @@ public class SystemClass extends JFrame {
         okFb.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int cIndex = 0;
+                int cIndex = -1;
                 for (int i = 0; i < Allcourses.size(); i++) {
                     if (Allcourses.get(i).Course_code.equalsIgnoreCase(CourseCodeFt.getText())) {
                         cIndex = i;
                         break;
                     }
                 }
-                if (cIndex != 0) {
+                if (cIndex != -1) {
                     CourseCodeFt.setEditable(false);
                     if (Allcourses.get(cIndex) instanceof CourseSection ) {
                         if (((CourseSection)Allcourses.get(cIndex)).regStud_course.isEmpty()) {
@@ -1561,7 +1563,7 @@ public class SystemClass extends JFrame {
         okVGB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int cIndex = 0;
+                int cIndex = -1;
                 for (int i = 0; i < Allcourses.size(); i++) {
                     if (Allcourses.get(i).Course_code.equalsIgnoreCase(CourseCodeVGT.getText())) {
                         cIndex = i;
@@ -1569,7 +1571,7 @@ public class SystemClass extends JFrame {
                     }
                 }
 
-                if (cIndex != 0) {
+                if (cIndex != -1) {
                     if (Allcourses.get(cIndex) instanceof CourseSection ) {
                         if (!((CourseSection)Allcourses.get(cIndex)).grades.isEmpty()) {
                             CourseCodeVGT.setEditable(false);
@@ -1641,9 +1643,7 @@ public class SystemClass extends JFrame {
                 null);
     }
 
-    public void removeCourseMethod(Course c) {
-        Allcourses.remove(c);
-    }
+   
 //Methods of streaming 
 
     public static void saveCourseToFile() {
