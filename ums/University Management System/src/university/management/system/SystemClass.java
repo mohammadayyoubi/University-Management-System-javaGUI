@@ -148,7 +148,7 @@ public class SystemClass extends JFrame {
         loadCourseFromFile();
         loadPassFromFile();
         loadUserFromFile();
-        
+
         Student.ID = (Allstudents.size());//3melna assign 3ala ID taba3 class student yale huwe static la ysir metel size arraylist te3 students
 
         /*3malna login hun*/
@@ -317,7 +317,7 @@ public class SystemClass extends JFrame {
         addStud.add(northAddS, BorderLayout.NORTH);
         addStud.add(addStudData, BorderLayout.CENTER);
 
-  //add course panel
+        //add course panel
         JPanel northAddC = new JPanel(new FlowLayout());
         JLabel addC = new JLabel("Add Course");
         addC.setFont(new Font("Arial", Font.BOLD, 20));
@@ -325,7 +325,7 @@ public class SystemClass extends JFrame {
         northAddC.add(addC);
         northAddC.setBackground(new Color(58, 135, 173));
 
-        northAddC.setBorder(BorderFactory.createLineBorder(Color.black,2));
+        northAddC.setBorder(BorderFactory.createLineBorder(Color.black, 2));
         JPanel addCourse = new JPanel(new BorderLayout());
         addCourse.setBorder(new EmptyBorder(15, 15, 15, 15));
         addCourse.setBackground(Color.white);
@@ -333,7 +333,7 @@ public class SystemClass extends JFrame {
         JPanel addCourseData = new JPanel(new GridLayout(8, 2, 15, 15));
         addCourseData.setBorder(new EmptyBorder(20, 10, 20, 10));
         addCourseData.setBackground(Color.white);
-        
+
         JLabel CourseCodeL = new JLabel("Course Code");
         JLabel CourseNameL = new JLabel("Course Name");
         JLabel SectionNBL = new JLabel("Number of sec");
@@ -386,15 +386,11 @@ public class SystemClass extends JFrame {
         addCourse.add(northAddC, BorderLayout.NORTH);
         addCourse.add(addCourseData, BorderLayout.CENTER);
 
-        
-        
-
         // Add\remove stud design
         JPanel addRemove = new JPanel(new BorderLayout(15, 15));
         addRemove.setBackground(Color.WHITE);
         addRemove.setBorder(new EmptyBorder(80, 15, 80, 15));
 
-        
         //addRemove Header panel
         JPanel ARSHeader = new JPanel(new FlowLayout(FlowLayout.CENTER));
         ARSHeader.setBackground(new Color(58, 135, 173));
@@ -424,9 +420,7 @@ public class SystemClass extends JFrame {
         ARSData.add(ARnote);
         addRemove.add(ARSData, BorderLayout.CENTER);
 
-       
 //Fill grades
-
         JPanel fillGrade = new JPanel(new BorderLayout(15, 15));
         fillGrade.setBackground(Color.WHITE);
         fillGrade.setBorder(new EmptyBorder(120, 15, 80, 15));
@@ -456,12 +450,11 @@ public class SystemClass extends JFrame {
         FGData.add(CourseCodeFt);
         FGData.add(okFb);
         FGData.add(changeCourse);
-        FGData.setBorder(new EmptyBorder(50,30,100,30));
-        
+        FGData.setBorder(new EmptyBorder(50, 30, 100, 30));
+
         fillGrade.add(FGData, BorderLayout.CENTER);
 
-        
- // MoveStudFromCourse data panel
+        // MoveStudFromCourse data panel
         JPanel MoveStudFromCourse = new JPanel(new BorderLayout(15, 15));
         MoveStudFromCourse.setBackground(Color.WHITE);
         MoveStudFromCourse.setBorder(new EmptyBorder(80, 15, 80, 15));
@@ -475,7 +468,7 @@ public class SystemClass extends JFrame {
         MoveStudFromCourseHeaderl.setForeground(Color.WHITE);
         MoveStudFromCourseHeader.add(MoveStudFromCourseHeaderl);
         MoveStudFromCourse.add(MoveStudFromCourseHeader, BorderLayout.NORTH);
-        
+
         JPanel MSData = new JPanel(new GridLayout(4, 2, 50, 30));
         MSData.setBackground(Color.WHITE);
         fromLabel.setFont(new Font("Arial", Font.BOLD, 16));
@@ -494,13 +487,13 @@ public class SystemClass extends JFrame {
         MSData.add(moveB);
         MSData.add(Mnote);
         MoveStudFromCourse.add(MSData, BorderLayout.CENTER);
-        
- // RemoveSTUD Data panel
-   // remove student design
+
+        // RemoveSTUD Data panel
+        // remove student design
         JPanel removeStud = new JPanel(new BorderLayout(15, 15));
         removeStud.setBackground(Color.WHITE);
         removeStud.setBorder(new EmptyBorder(120, 15, 120, 15));
-   // Remove stud Header panel
+        // Remove stud Header panel
         JPanel RSHeader = new JPanel(new FlowLayout(FlowLayout.CENTER));
         RSHeader.setBackground(new Color(58, 135, 173));
         RSHeader.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
@@ -509,9 +502,9 @@ public class SystemClass extends JFrame {
         RSheaderLabel.setForeground(Color.WHITE);
         RSHeader.add(RSheaderLabel);
         removeStud.add(RSHeader, BorderLayout.NORTH);
-        
+
         JPanel RSData = new JPanel(new GridLayout(2, 2, 20, 30));
-        RSData.setBorder(new EmptyBorder(30,20,100,20));
+        RSData.setBorder(new EmptyBorder(30, 20, 100, 20));
         RSData.setBackground(Color.WHITE);
         JLabel RSID = new JLabel("Student  ID");
         RS_ID.setFont(new Font("Arial", Font.BOLD, 16));
@@ -527,8 +520,7 @@ public class SystemClass extends JFrame {
 
         removeStud.add(RSData, BorderLayout.CENTER);
 
-   // RemoveCourse Data panel
-   
+        // RemoveCourse Data panel
         // RemoveCourse Header panel
         JPanel removeCourse = new JPanel(new BorderLayout(15, 15));
         removeCourse.setBackground(Color.WHITE);
@@ -541,10 +533,10 @@ public class SystemClass extends JFrame {
         RCheaderLabel.setForeground(Color.WHITE);
         RCHeader.add(RCheaderLabel);
         removeCourse.add(RCHeader, BorderLayout.NORTH);
-        
+
         JPanel RCData = new JPanel(new GridLayout(2, 2, 40, 30));
         RCData.setBackground(Color.WHITE);
-        RCData.setBorder(new EmptyBorder(50,20,100,20));
+        RCData.setBorder(new EmptyBorder(50, 20, 100, 20));
         RCData.setBackground(Color.white);
         JLabel RCCode = new JLabel("Course Code");
         RC_Code.setFont(new Font("Arial", Font.BOLD, 20));
@@ -563,7 +555,7 @@ public class SystemClass extends JFrame {
 
         removeCourse.setBorder(new EmptyBorder(120, 15, 100, 15));
         removeCourse.add(RCData, BorderLayout.CENTER);
-    //Student infoDesign
+        //Student infoDesign
         JLabel ISIDL = new JLabel("   ID");
         JLabel ISNameL = new JLabel("   Name");
         JLabel ISSSNL = new JLabel("   SSN");
@@ -713,7 +705,7 @@ public class SystemClass extends JFrame {
         ButtonEditStud.setFont(new Font("Arial", Font.BOLD, 20));
 
         JPanel EditStud = new JPanel(new BorderLayout());
-        
+
         EditStud.setBackground(Color.WHITE);
         JPanel ESNorth = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JLabel ESNL = new JLabel("Edit Student Info");
@@ -728,7 +720,7 @@ public class SystemClass extends JFrame {
         ESID.setFont(new Font("Arial", Font.BOLD, 20));
         ESPhone.setFont(new Font("Arial", Font.ROMAN_BASELINE, 20));
         ESAddress.setFont(new Font("Arial", Font.ROMAN_BASELINE, 20));
-        
+
         ESCenter.add(ESIDL);
         ESCenter.add(ESID);
         ESCenter.add(ESPhoneL);
@@ -747,7 +739,7 @@ public class SystemClass extends JFrame {
         ViewGrades.setBackground(Color.WHITE);
         ViewGrades.setBorder(new EmptyBorder(80, 15, 80, 15));
 
-   //View Grades
+        //View Grades
         //View grades HeaderPanel
         JPanel VGHeader = new JPanel(new FlowLayout(FlowLayout.CENTER));
         VGHeader.setBackground(new Color(58, 135, 173));
@@ -764,8 +756,8 @@ public class SystemClass extends JFrame {
         CourseCodeVGL.setFont(new Font("Arial", Font.BOLD, 20));
         okVGB.setFont(new Font("Arial", Font.BOLD, 20));
         changeCourseVGB.setFont(new Font("Arial", Font.BOLD, 20));
-        VGData.setBorder(new EmptyBorder(50,30,120,30));
-        
+        VGData.setBorder(new EmptyBorder(50, 30, 120, 30));
+
         okVGB.setBackground(new Color(58, 135, 173));
         okVGB.setForeground(Color.WHITE);
         changeCourseVGB.setBackground(new Color(58, 135, 173));
@@ -777,7 +769,7 @@ public class SystemClass extends JFrame {
 
         ViewGrades.add(VGData, BorderLayout.CENTER);
 
-   //change Pass and Email design panel
+        //change Pass and Email design panel
         JPanel ChangepassUser = new JPanel(new BorderLayout());
         //Header
         JPanel CPUHeader = new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -800,12 +792,12 @@ public class SystemClass extends JFrame {
         newPassL.setFont(new Font("Arial", Font.BOLD, 18));
         oldUserL.setFont(new Font("Arial", Font.BOLD, 18));
         newUserL.setFont(new Font("Arial", Font.BOLD, 18));
-        
+
         newUser.setFont(new Font("Arial", Font.BOLD, 18));
         oldPass.setFont(new Font("Arial", Font.BOLD, 18));
         NewPass.setFont(new Font("Arial", Font.BOLD, 18));
         olduser.setFont(new Font("Arial", Font.BOLD, 18));
-        
+
         change.setFont(new Font("Arial", Font.BOLD, 18));
 
         //center
@@ -1193,22 +1185,22 @@ public class SystemClass extends JFrame {
                 } else {
                     int sIndex = -1;
                     for (Student s : Allstudents) {
-                        if(s.SID == Integer.parseInt(ESID.getText())){
+                        if (s.SID == Integer.parseInt(ESID.getText())) {
                             sIndex = Allstudents.indexOf(s);
                         }
                     }
-                    
-                    if(sIndex != -1){
-                        if(ESAddress.getText().equals("")  ||  ESPhone.getText().equals("")){
+
+                    if (sIndex != -1) {
+                        if (ESAddress.getText().equals("") || ESPhone.getText().equals("")) {
                             JOptionPane.showMessageDialog(null, "Enter Student Information", "Missing entering All information", JOptionPane.WARNING_MESSAGE);
-                        }else{
+                        } else {
                             Allstudents.get(sIndex).Saddress = ESAddress.getText();
                             Allstudents.get(sIndex).SphoneNb = ESPhone.getText();
-                                ESNote.setText("Succefully changed");
-                                ESNote.setForeground(new Color(1, 100, 30));
-                                ESNote.setFont(new Font("Arial", Font.BOLD, 14));
+                            ESNote.setText("Succefully changed");
+                            ESNote.setForeground(new Color(1, 100, 30));
+                            ESNote.setFont(new Font("Arial", Font.BOLD, 14));
                         }
-                    }else{
+                    } else {
                         ESNote.setText("Wrong ID / not found");
                         ESNote.setForeground(new Color(200, 1, 1));
                         ESNote.setFont(new Font("Arial", Font.BOLD, 14));
@@ -1415,59 +1407,59 @@ public class SystemClass extends JFrame {
                 int weeks = Integer.parseInt(weeksNbT.getText()), Nbsec = Integer.parseInt(CSectionNbT.getText()), maxNbStud = Integer.parseInt(CMaxNbOfStudT.getText());
                 for (int i = 0; i < Allcourses.size(); i++) {
                     if (Allcourses.get(i).Course_code.equalsIgnoreCase(courseCode)) {
-                         addCourseNote.setText("Already exists");
-                         addCourseNote.setForeground(new Color(200, 1, 1));
-                         addCourseNote.setFont(new Font("Arial", Font.BOLD, 14));
-                         System.out.println("course already exist");
+                        addCourseNote.setText("Already exists");
+                        addCourseNote.setForeground(new Color(200, 1, 1));
+                        addCourseNote.setFont(new Font("Arial", Font.BOLD, 14));
+                        System.out.println("course already exist");
                         return;
                     }
                 }
-               
-                    if ((weeks < 5 || weeks > 12) && status.equalsIgnoreCase("online")) {
-                        JOptionPane.showMessageDialog(null, "Weeks must be between 5&12", "Error Message", JOptionPane.ERROR_MESSAGE);
-                    } else {
-                   
-                        if (status.equalsIgnoreCase("normal")) {
-                            
-                            Allcourses.add(new normalCourse(maxNbStud, Nbsec, courseName, courseCode, weeks, status));
-                            addCourseNote.setText("Normal Course (" + courseCode + ") Added");
-                            addCourseNote.setForeground(new Color(1, 100, 30));
-                            addCourseNote.setFont(new Font("Arial", Font.BOLD, 14));
-                            System.out.println("Normal Course (" + courseCode + ") Added");
-                            
-                        } else {
-                            //online course add
-                            Allcourses.add(new onlineCourse(maxNbStud, Nbsec, courseName, courseCode, weeks, status));
-                            addCourseNote.setText("Online Course (" + courseCode + ") Added");
-                            addCourseNote.setForeground(new Color(1, 100, 30));
-                            addCourseNote.setFont(new Font("Arial", Font.BOLD, 14));
-                            System.out.println("Online Course (" + courseCode + ") Added");
-                        }
 
+                if ((weeks < 5 || weeks > 12) && status.equalsIgnoreCase("online")) {
+                    JOptionPane.showMessageDialog(null, "Weeks must be between 5&12", "Error Message", JOptionPane.ERROR_MESSAGE);
+                } else {
+
+                    if (status.equalsIgnoreCase("normal")) {
+
+                        Allcourses.add(new normalCourse(maxNbStud, Nbsec, courseName, courseCode, weeks, status));
+                        addCourseNote.setText("Normal Course (" + courseCode + ") Added");
+                        addCourseNote.setForeground(new Color(1, 100, 30));
+                        addCourseNote.setFont(new Font("Arial", Font.BOLD, 14));
+                        System.out.println("Normal Course (" + courseCode + ") Added");
+
+                    } else {
+                        //online course add
+                        Allcourses.add(new onlineCourse(maxNbStud, Nbsec, courseName, courseCode, weeks, status));
+                        addCourseNote.setText("Online Course (" + courseCode + ") Added");
+                        addCourseNote.setForeground(new Color(1, 100, 30));
+                        addCourseNote.setFont(new Font("Arial", Font.BOLD, 14));
+                        System.out.println("Online Course (" + courseCode + ") Added");
                     }
- 
+
+                }
+
             }
         });
         /*remove course button*/
 
         //RC_Code
         RCButton.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (RC_Code.getText().equals("")) {
-            RCNote.setText("Enter Course Code");
-        } else {
-            for (int i = 0; i < Allcourses.size(); i++) { // Changed <= to <
-                if (RC_Code.getText().equalsIgnoreCase(Allcourses.get(i).Course_code)) {
-                    Allcourses.remove(Allcourses.get(i));                
-                    RCNote.setText("Removed");
-                    return;
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (RC_Code.getText().equals("")) {
+                    RCNote.setText("Enter Course Code");
+                } else {
+                    for (int i = 0; i < Allcourses.size(); i++) { // Changed <= to <
+                        if (RC_Code.getText().equalsIgnoreCase(Allcourses.get(i).Course_code)) {
+                            Allcourses.remove(Allcourses.get(i));
+                            RCNote.setText("Removed");
+                            return;
+                        }
+                    }
+                    RCNote.setText("Course not found!");
                 }
             }
-            RCNote.setText("Course not found!");
-        }
-    }
-});
+        });
 
 
         /*course info button actionlistener*/
@@ -1487,25 +1479,35 @@ public class SystemClass extends JFrame {
                     MaxNbOfStudT.setText(String.valueOf(((CourseSection) Allcourses.get(cIndex)).Section_maxNbStud));
                     NbRegStud.setText(String.valueOf(((CourseSection) Allcourses.get(cIndex)).regStud_course.size()));
 
-                    if (Allcourses.get(cIndex) instanceof CourseSection ) {
-                        if (Allcourses.get(cIndex) instanceof onlineCourse ) {
-                            String status = ((onlineCourse)Allcourses.get(cIndex)).Status;
-                            String sectionNB = String.valueOf(((onlineCourse)Allcourses.get(cIndex)).section_Nb);
+                    if (Allcourses.get(cIndex) instanceof CourseSection) {
+                        if (Allcourses.get(cIndex) instanceof onlineCourse) {
+                            String status = ((onlineCourse) Allcourses.get(cIndex)).Status;
+                            String sectionNB = String.valueOf(((onlineCourse) Allcourses.get(cIndex)).section_Nb);
                             ICStatusT.setText(status);
                             SectionNBT.setText(sectionNB);
 
                         }
                         if (Allcourses.get(cIndex) instanceof normalCourse ) {
-                            String status =((normalCourse)Allcourses.get(cIndex)).Status;
-                            String sectionNB = String.valueOf(((normalCourse)Allcourses.get(cIndex)).section_Nb);
+                            String status = ((normalCourse) Allcourses.get(cIndex)).Status;
+                            String sectionNB = String.valueOf(((normalCourse) Allcourses.get(cIndex)).section_Nb);
                             ICStatusT.setText(status);
                             SectionNBT.setText(sectionNB);
                         }
-                        if (((normalCourse)Allcourses.get(cIndex)).grades.isEmpty()) {
-                            AverageGradeT.setText("Fill grades first");
-                        } else {
-                            AverageGradeT.setText(String.valueOf(((normalCourse)Allcourses.get(cIndex)).getAvarageGrade()));
+                        if (Allcourses.get(cIndex) instanceof normalCourse) {
+                            if (((normalCourse) Allcourses.get(cIndex)).grades.isEmpty()) {
+                                AverageGradeT.setText("Fill grades first");
+                            } else {
+                                AverageGradeT.setText(String.valueOf(((normalCourse) Allcourses.get(cIndex)).getAvarageGrade()));
+                            }
                         }
+                         if (Allcourses.get(cIndex) instanceof onlineCourse) {
+                            if (((onlineCourse) Allcourses.get(cIndex)).grades.isEmpty()) {
+                                AverageGradeT.setText("Fill grades first");
+                            } else {
+                                AverageGradeT.setText(String.valueOf(((onlineCourse) Allcourses.get(cIndex)).getAvarageGrade()));
+                            }
+                        }
+
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Course not found", "Error Message", JOptionPane.WARNING_MESSAGE);
@@ -1532,20 +1534,20 @@ public class SystemClass extends JFrame {
                 }
                 if (cIndex != -1) {
                     CourseCodeFt.setEditable(false);
-                    if (Allcourses.get(cIndex) instanceof CourseSection ) {
-                        if (((CourseSection)Allcourses.get(cIndex)).regStud_course.isEmpty()) {
+                    if (Allcourses.get(cIndex) instanceof CourseSection) {
+                        if (((CourseSection) Allcourses.get(cIndex)).regStud_course.isEmpty()) {
                             JOptionPane.showMessageDialog(null, "There are no students in this course", "Error Message", JOptionPane.WARNING_MESSAGE);
                         } else {
-                            if (((CourseSection)Allcourses.get(cIndex)).grades.size() == 0) {
-                                for (int i = 0; i < ((CourseSection)Allcourses.get(cIndex)).regStud_course.size(); i++) {
+                            if (((CourseSection) Allcourses.get(cIndex)).grades.size() == 0) {
+                                for (int i = 0; i < ((CourseSection) Allcourses.get(cIndex)).regStud_course.size(); i++) {
                                     Double grade = NaN;
                                     do {
-                                        grade = Double.parseDouble(JOptionPane.showInputDialog(null, ((CourseSection)Allcourses.get(cIndex)).regStud_course.get(i).Sname + "'s grade"));
+                                        grade = Double.parseDouble(JOptionPane.showInputDialog(null, ((CourseSection) Allcourses.get(cIndex)).regStud_course.get(i).Sname + "'s grade"));
                                     } while (grade.isNaN());
                                     /*{
                                 grade = Double.parseDouble(JOptionPane.showInputDialog(null, "grade must be a number"));
                                 }*/
-                                    ((CourseSection)Allcourses.get(cIndex)).grades.add(grade);
+                                    ((CourseSection) Allcourses.get(cIndex)).grades.add(grade);
                                 }
                             } else {
                                 JOptionPane.showMessageDialog(null, "Alredy filled all grades", "Error Message", JOptionPane.WARNING_MESSAGE);
@@ -1572,13 +1574,13 @@ public class SystemClass extends JFrame {
                 }
 
                 if (cIndex != -1) {
-                    if (Allcourses.get(cIndex) instanceof CourseSection ) {
-                        if (!((CourseSection)Allcourses.get(cIndex)).grades.isEmpty()) {
+                    if (Allcourses.get(cIndex) instanceof CourseSection) {
+                        if (!((CourseSection) Allcourses.get(cIndex)).grades.isEmpty()) {
                             CourseCodeVGT.setEditable(false);
-                            for (int i = 0; i < ((CourseSection)Allcourses.get(cIndex)).grades.size(); i++) {
-                                JOptionPane.showMessageDialog(null, ((CourseSection)Allcourses.get(cIndex)).regStud_course.get(i).Sname + ": " + ((CourseSection)Allcourses.get(cIndex)).grades.get(i), "Grades", JOptionPane.WARNING_MESSAGE);
+                            for (int i = 0; i < ((CourseSection) Allcourses.get(cIndex)).grades.size(); i++) {
+                                JOptionPane.showMessageDialog(null, ((CourseSection) Allcourses.get(cIndex)).regStud_course.get(i).Sname + ": " + ((CourseSection) Allcourses.get(cIndex)).grades.get(i), "Grades", JOptionPane.WARNING_MESSAGE);
                             }
-                            ((CourseSection)Allcourses.get(cIndex)).print_Student();
+                            ((CourseSection) Allcourses.get(cIndex)).print_Student();
                         } else {
                             JOptionPane.showMessageDialog(null, "Fill Grades first", "No Grades Found", JOptionPane.WARNING_MESSAGE);
                         }
@@ -1643,11 +1645,9 @@ public class SystemClass extends JFrame {
                 null);
     }
 
-   
 //Methods of streaming 
-
     public static void saveCourseToFile() {
-        try ( FileOutputStream fileOut = new FileOutputStream("courses.dat");  ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+        try (FileOutputStream fileOut = new FileOutputStream("courses.dat"); ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
 
             out.writeObject(Allcourses);
             System.out.println("Courses saved successfully.");
@@ -1658,7 +1658,7 @@ public class SystemClass extends JFrame {
     }
 
     public static void saveStudToFile() {
-        try ( FileOutputStream fileOut = new FileOutputStream("students.dat");  ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+        try (FileOutputStream fileOut = new FileOutputStream("students.dat"); ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
 
             out.writeObject(Allstudents);
             System.out.println("Students saved successfully.");
@@ -1669,7 +1669,7 @@ public class SystemClass extends JFrame {
     }
 
     public static void loadStudFromFile() {
-        try ( FileInputStream fileIn = new FileInputStream("students.dat");  ObjectInputStream in = new ObjectInputStream(fileIn)) {
+        try (FileInputStream fileIn = new FileInputStream("students.dat"); ObjectInputStream in = new ObjectInputStream(fileIn)) {
 
             Allstudents = (ArrayList<Student>) in.readObject();
             System.out.println("Students loaded successfully.");
@@ -1680,7 +1680,7 @@ public class SystemClass extends JFrame {
     }
 
     public static void loadCourseFromFile() {
-        try ( FileInputStream fileIn = new FileInputStream("courses.dat");  ObjectInputStream in = new ObjectInputStream(fileIn)) {
+        try (FileInputStream fileIn = new FileInputStream("courses.dat"); ObjectInputStream in = new ObjectInputStream(fileIn)) {
 
             Allcourses = (ArrayList<Course>) in.readObject();
             System.out.println("Courses loaded successfully.");
@@ -1691,7 +1691,7 @@ public class SystemClass extends JFrame {
     }
 
     public static void saveUserToFile() {
-        try ( FileOutputStream fileOut = new FileOutputStream("User.dat");  ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+        try (FileOutputStream fileOut = new FileOutputStream("User.dat"); ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
 
             out.writeObject(username);
 
@@ -1701,7 +1701,7 @@ public class SystemClass extends JFrame {
             System.out.println("Error saving username: " + e.getMessage());
         }
         String txtUserPath = "username.txt";
-        try ( BufferedWriter writer = new BufferedWriter(new FileWriter(txtUserPath))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(txtUserPath))) {
             writer.write(username);
             System.out.println("username Saved Succesfully in (username.txt).");
         } catch (IOException e) {
@@ -1710,7 +1710,7 @@ public class SystemClass extends JFrame {
     }
 
     public static void loadUserFromFile() {
-        try ( FileInputStream fileIn = new FileInputStream("User.dat");  ObjectInputStream in = new ObjectInputStream(fileIn)) {
+        try (FileInputStream fileIn = new FileInputStream("User.dat"); ObjectInputStream in = new ObjectInputStream(fileIn)) {
 
             username = (String) in.readObject();
             System.out.println("username loaded successfully.");
@@ -1721,7 +1721,7 @@ public class SystemClass extends JFrame {
     }
 
     public static void savePassToFile() {
-        try ( FileOutputStream fileOut = new FileOutputStream("Pass.dat");  ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+        try (FileOutputStream fileOut = new FileOutputStream("Pass.dat"); ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
 
             out.writeObject(pass);
 
@@ -1731,7 +1731,7 @@ public class SystemClass extends JFrame {
             System.out.println("Error saving Password: " + e.getMessage());
         }
         String txtPassPath = "Password.txt";
-        try ( BufferedWriter writer = new BufferedWriter(new FileWriter(txtPassPath))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(txtPassPath))) {
             writer.write(pass);
             System.out.println("Password Saved Succesfully in (Password.txt).");
         } catch (IOException e) {
@@ -1740,7 +1740,7 @@ public class SystemClass extends JFrame {
     }
 
     public static void loadPassFromFile() {
-        try ( FileInputStream fileIn = new FileInputStream("Pass.dat");  ObjectInputStream in = new ObjectInputStream(fileIn)) {
+        try (FileInputStream fileIn = new FileInputStream("Pass.dat"); ObjectInputStream in = new ObjectInputStream(fileIn)) {
 
             pass = (String) in.readObject();
             System.out.println("Password loaded successfully.");
